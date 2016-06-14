@@ -1,0 +1,8 @@
+{
+    "require": {
+        "phpoffice/phpexcel": "^1.8",
+        "respect/validation": "^1.1",
+        "league/csv": "^8.0",
+        "sergeytsalkov/meekrodb": "^2.3"
+    }
+}

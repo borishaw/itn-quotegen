@@ -1,0 +1,231 @@
+[
+    {
+        "name": "phpoffice/phpexcel",
+        "version": "1.8.1",
+        "version_normalized": "1.8.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/PHPOffice/PHPExcel.git",
+            "reference": "372c7cbb695a6f6f1e62649381aeaa37e7e70b32"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/PHPOffice/PHPExcel/zipball/372c7cbb695a6f6f1e62649381aeaa37e7e70b32",
+            "reference": "372c7cbb695a6f6f1e62649381aeaa37e7e70b32",
+            "shasum": ""
+        },
+        "require": {
+            "ext-xml": "*",
+            "ext-xmlwriter": "*",
+            "php": ">=5.2.0"
+        },
+        "time": "2015-05-01 07:00:55",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "PHPExcel": "Classes/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "LGPL"
+        ],
+        "authors": [
+            {
+                "name": "Maarten Balliauw",
+                "homepage": "http://blog.maartenballiauw.be"
+            },
+            {
+                "name": "Mark Baker"
+            },
+            {
+                "name": "Franck Lefevre",
+                "homepage": "http://blog.rootslabs.net"
+            },
+            {
+                "name": "Erik Tilt"
+            }
+        ],
+        "description": "PHPExcel - OpenXML - Read, Create and Write Spreadsheet documents in PHP - Spreadsheet engine",
+        "homepage": "http://phpexcel.codeplex.com",
+        "keywords": [
+            "OpenXML",
+            "excel",
+            "php",
+            "spreadsheet",
+            "xls",
+            "xlsx"
+        ]
+    },
+    {
+        "name": "respect/validation",
+        "version": "1.1.0",
+        "version_normalized": "1.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Respect/Validation.git",
+            "reference": "af0be2fbcd22e2199292983367d9dccdd471adde"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Respect/Validation/zipball/af0be2fbcd22e2199292983367d9dccdd471adde",
+            "reference": "af0be2fbcd22e2199292983367d9dccdd471adde",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4"
+        },
+        "require-dev": {
+            "egulias/email-validator": "~1.2",
+            "malkusch/bav": "~1.0",
+            "mikey179/vfsstream": "^1.5",
+            "phpunit/phpunit": "~4.0",
+            "symfony/validator": "~2.6.9",
+            "zendframework/zend-validator": "~2.3"
+        },
+        "suggest": {
+            "egulias/email-validator": "Strict (RFC compliant) email validation",
+            "ext-bcmath": "Arbitrary Precision Mathematics",
+            "ext-mbstring": "Multibyte String Functions",
+            "fabpot/php-cs-fixer": "Fix PSR2 and other coding style issues",
+            "malkusch/bav": "German bank account validation",
+            "symfony/validator": "Use Symfony validator through Respect\\Validation",
+            "zendframework/zend-validator": "Use Zend Framework validator through Respect\\Validation"
+        },
+        "time": "2016-04-24 01:11:23",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.1-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Respect\\Validation\\": "library/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD Style"
+        ],
+        "authors": [
+            {
+                "name": "Respect/Validation Contributors",
+                "homepage": "https://github.com/Respect/Validation/graphs/contributors"
+            }
+        ],
+        "description": "The most awesome validation engine ever created for PHP",
+        "homepage": "http://respect.github.io/Validation/",
+        "keywords": [
+            "respect",
+            "validation",
+            "validator"
+        ]
+    },
+    {
+        "name": "league/csv",
+        "version": "8.0.0",
+        "version_normalized": "8.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/thephpleague/csv.git",
+            "reference": "0a1b535df48507f58ed3c7ab44e72272b11163ac"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/thephpleague/csv/zipball/0a1b535df48507f58ed3c7ab44e72272b11163ac",
+            "reference": "0a1b535df48507f58ed3c7ab44e72272b11163ac",
+            "shasum": ""
+        },
+        "require": {
+            "ext-mbstring": "*",
+            "php": ">=5.5.0"
+        },
+        "require-dev": {
+            "fabpot/php-cs-fixer": "^1.9",
+            "phpunit/phpunit": "^4.0"
+        },
+        "time": "2015-12-11 09:28:14",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "8.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "League\\Csv\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Ignace Nyamagana Butera",
+                "email": "nyamsprod@gmail.com",
+                "homepage": "https://github.com/nyamsprod/",
+                "role": "Developer"
+            }
+        ],
+        "description": "Csv data manipulation made easy in PHP",
+        "homepage": "http://csv.thephpleague.com",
+        "keywords": [
+            "csv",
+            "export",
+            "filter",
+            "import",
+            "read",
+            "write"
+        ]
+    },
+    {
+        "name": "sergeytsalkov/meekrodb",
+        "version": "v2.3",
+        "version_normalized": "2.3.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/SergeyTsalkov/meekrodb.git",
+            "reference": "eb36858f1aff94ae1665900e681a1cfb78563ee1"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/SergeyTsalkov/meekrodb/zipball/eb36858f1aff94ae1665900e681a1cfb78563ee1",
+            "reference": "eb36858f1aff94ae1665900e681a1cfb78563ee1",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.2.0"
+        },
+        "time": "2014-06-16 22:40:22",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "db.class.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "LGPL-3.0"
+        ],
+        "authors": [
+            {
+                "name": "Sergey Tsalkov",
+                "email": "stsalkov@gmail.com"
+            }
+        ],
+        "description": "The Simple PHP/MySQL Library",
+        "homepage": "http://www.meekro.com",
+        "keywords": [
+            "database",
+            "mysql",
+            "mysqli",
+            "pdo"
+        ]
+    }
+]
