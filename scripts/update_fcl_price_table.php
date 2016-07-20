@@ -1,5 +1,5 @@
 <?php
-require '../vendor/autoload.php';
+/*require '../vendor/autoload.php';
 
 DB::$user = 'root';
 DB::$password = 'root';
@@ -10,9 +10,8 @@ use League\Csv\Reader;
 $csv = Reader::createFromPath('fcl_price_table.csv');
 $result = $csv->fetchAll();
 
-//var_dump($result);
 
-foreach ($result as $row){
+foreach ($result as $row) {
     $city = $row[0];
     $province = $row[1];
     $country = $row[2];
@@ -32,7 +31,7 @@ foreach ($result as $row){
             'sold' => $sold,
             'per' => $per
         ]);
-    } catch (Exception $e){
+    } catch (Exception $e) {
         print $e->getMessage();
     }
-}
+}*/

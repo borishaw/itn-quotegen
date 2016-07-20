@@ -7,5 +7,7 @@
     <orderEntry type="library" name="angular" level="application" />
     <orderEntry type="library" name="bootstrap" level="application" />
     <orderEntry type="library" name="ui-bootstrap" level="application" />
+    <orderEntry type="library" name="angular-validation" level="application" />
+    <orderEntry type="library" name="angular-validation-rule" level="application" />
   </component>
 </module>

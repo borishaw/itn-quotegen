@@ -1,6 +1,6 @@
 <?php
-
-require 'vendor/autoload.php';
+/*
+require '../vendor/autoload.php';
 
 use League\Csv\Reader;
 
@@ -14,4 +14,4 @@ foreach ($cities as $row){
     $city_zone[trim($row[0])] = $row[1];
 }
 
-var_dump($city_zone);
+var_dump($city_zone);*/
