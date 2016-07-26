@@ -22,6 +22,7 @@ $tables = DB::tableList();
         </form>
     </li>
     <?php endforeach; ?>
+    <li><a href="viewQuotes.php">View Quotes</a></li>
 </ul>
 </body>
 </html>
