@@ -133,6 +133,10 @@ if ($mode_of_transportation != 'Ocean FCL'){
 	$pieces_info_html .= "<ul><li>Type of Container: $type_of_container</li></ul>";
 }
 
+/*
+Quote Calculation
+*/
+$quote_html = '';
 
 //Consolidate all HTML pieces
 $html =
@@ -157,13 +161,8 @@ $mail->Subject = "Quote " . $quote_number;
 $mail->Body = $html;
 $mail->addAttachment($pdf_path);
 
-/*
- * Quote Calculation for FCL
- * Steps:
- * 1.
- * 2.
- * 3.
- */
+
+
 
 
 try {
