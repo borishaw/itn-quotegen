@@ -6,7 +6,7 @@ if (!isset($_SERVER['PHP_AUTH_USER'])) {
 	print "Sorry - you need valid credentials to be granted access!\n";
 	exit;
 } else {
-	if (($_SERVER['PHP_AUTH_USER'] == 'jane') && ($_SERVER['PHP_AUTH_PW'] == 'smith')) {
+	if (($_SERVER['PHP_AUTH_USER'] == 'john') && ($_SERVER['PHP_AUTH_PW'] == 'smith')) {
 
 	}
 	else {
@@ -80,7 +80,7 @@ if (!isset($_SERVER['PHP_AUTH_USER'])) {
 				<label for="destination_city">Destination City:</label>
 				<select name="Destination_City" id="destination_city" ng-model="destination.city" ng-options="city for city in cities" validator="required" required-error-message="Please select a destination city">
 				</select>
-				<input name="Destination_City_Other" type="text" ng-if="destination.city == 'Other'">
+				<input name="Destination_City_Other" type="text" ng-if="destination.city == 'Other'" ng-model="destination.otherCity">
 				<label for="destination_province">Province:</label>
 				<select name="Destination_Province" ng-model="destination.province" id="destination_province" ng-options="province for province in provinces" ng-init="destination.province = provinces[8]" disabled>
 				</select>
