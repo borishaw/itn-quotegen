@@ -19,22 +19,10 @@ if (!isset($_SERVER['PHP_AUTH_USER'])) {
 	}
 }
 
-
-/*
-LCL and Air - Parameters of freight to be quoted automatically
-Max Length	243 cm
-Max Width	121 cm
-Max Height	220 cm
-Max actual weight per one pc	1150 KG
-Max actual weight per shipment 	2300 KG
-W/M ratio for truck tariff	167 KG per 1 CBM
-Zone 	1 to 7 only
-When quote LCL (ZONE 1,2,3) pick charges whichever are greater LCL or Air
- */
-
 //Get user's input
 $post_data = json_decode(file_get_contents("php://input"), true);
 
+print_r($post_data);
 
 /*
 Insert data into quotes table
@@ -55,10 +43,13 @@ $quote_number = DB::insertId();
 //Organize Input Data
 $agent_info = $post_data['agentInfo'];
 $destination_info = $post_data['destinationInfo'];
+$destination_city = $destination_info['city'];
 $pieces_info = $post_data['shipmentInfo']['pieces'];
-$unit_system = $post_data['shipmentInfo']['unitSystem'];
 $dangerous_goods = $post_data['shipmentInfo']['dangerousGoods'];
 $mode_of_transportation = $post_data['shipmentInfo']['modeOfTransportation'];
+if ($mode_of_transportation != "Ocean FCL"){
+	$unit_system = $post_data['shipmentInfo']['unitSystem'];
+}
 
 
 
@@ -136,11 +127,89 @@ if ($mode_of_transportation != 'Ocean FCL'){
 /*
 Quote Calculation
 */
-$quote_html = '';
+function quote_calculation($destination, $mode, $dangerous_goods, $pieces=null){
+	$quotable = true; //Assume all shipments are quotable
+	$quote = 0;
+
+	//Check if the shipment contains dangerous goods
+	if ($dangerous_goods == "DG"){
+		$quotable = false;
+	} else {
+		switch ($mode) {
+			case "Ocean FCL":
+				$rate_query = DB::query("SELECT sold from fcl_price_table WHERE city='$destination'");
+				if ((bool) $rate_query){
+					$quote = $rate_query[0]['sold'];
+				} else {
+					$quotable = false;
+				}
+				break;
+
+			default:
+				$total_weight = 0;
+				$volume_weight = 0;
+				foreach ($pieces as $piece){
+					$length = (int) $piece['length'];
+					$width = (int) $piece['width'];
+					$height = (int) $piece['height'];
+					$weight = (int) $piece['weight'];
+					$total_weight += $weight;
+					if ($mode == "Ocean LCL"){
+						$volume_weight += ($length + $width + $height) / 100 * 240;
+					} else if ("Air") {
+						$volume_weight += ($length + $width + $height) / 100 * 167;
+					}
+
+					if ($length > 243 || $width > 121 || $height > 220 || $weight > 1150){
+						$quotable = false;
+					}
+				}
+
+				if ($total_weight > 2300){
+					$quotable = false;
+				} else {
+					$zone_query = DB::query("SELECT zone FROM air_lcl_city_zone_table WHERE city='$destination'");
+					if ((bool) $zone_query){
+						$zone = $zone_query[0]['zone'];
+						if ($zone != 0){
+							$chargeable_weight = max([$total_weight, $volume_weight]);
+							$minimum_rate = (int) DB::query("SELECT rate FROM air_lcl_minimum_rate_table WHERE zone=$zone")[0]['rate'];
+							$rate_table = DB::query("SELECT * FROM air_lcl_rate_zone_$zone");
+							$max_weight_array = []; //Store all max value here
+							foreach ($rate_table as $rate_row){
+								//push all max value to the array above
+								array_push($max_weight_array, $rate_row['max']);
+							}
+							array_push($max_weight_array, $chargeable_weight);
+							sort($max_weight_array);//sort array from low to high
+							$zone_index = array_search($chargeable_weight, $max_weight_array);
+							$zone_rate = $rate_table[$zone_index]['rate'];
+							$chargeable_rate = $chargeable_weight * $zone_rate;
+							$quote = ceil($chargeable_weight);
+						} else {
+							$quotable = false;
+						}
+					} else {
+						$quotable = false;
+					}
+				}
+		}
+	}
+
+	//If quotable, return the quote in number, if not return a string
+	if ($quotable){
+		return 'CAD $' . $quote;
+	} else {
+		return "This shipment requires a manual quote.";
+	}
+}
+
+$quote_info_html = quote_calculation($destination_city, $mode_of_transportation, $dangerous_goods, $pieces_info);
 
 //Consolidate all HTML pieces
 $html =
 	"<h1>Quote $quote_number</h1>" .
+	"<h2>Quote Info: $quote_info_html</h2>" .
 	"<div>$agent_info_html</div>" .
 	"<div>$destination_info_html</div>" .
 	"<div>$dangerous_goods_info_html</div>" .
@@ -162,12 +231,9 @@ $mail->Body = $html;
 $mail->addAttachment($pdf_path);
 
 
-
-
-
-try {
+/*try {
 	$mail->send();
 	print "A copy of the quote was sent to your email address";
 } catch (Exception $e){
 	print $e->getMessage();
-}
+}*/
