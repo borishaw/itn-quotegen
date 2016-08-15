@@ -22,8 +22,6 @@ if (!isset($_SERVER['PHP_AUTH_USER'])) {
 //Get user's input
 $post_data = json_decode(file_get_contents("php://input"), true);
 
-print_r($post_data);
-
 /*
 Insert data into quotes table
 1. Company
@@ -63,14 +61,14 @@ Put data in html
 */
 
 //Agent Info
-$agent_info_html = "<h2>Agent Info</h2><ul>";
+$agent_info_html = "<ul>";
 foreach ($agent_info as $key => $value){
 	$agent_info_html .= "<li>" . ucwords(preg_replace('/(?<=\\w)(?=[A-Z])/'," $1", $key)) . ': ' . $value . "</li>";
 }
 $agent_info_html .= "</ul>";
 
 //Destination Info
-$destination_info_html = "<h2>Destination Info</h2><ul>";
+$destination_info_html = "<ul>";
 foreach ($destination_info as $key => $value){
 	$destination_info_html .= "<li>". ucwords(preg_replace('/(?<=\\w)(?=[A-Z])/'," $1", $key)) . ': ' . $value . "</li>";
 }
@@ -83,9 +81,7 @@ if ($dangerous_goods == 'DG'){
 	$dangerous_goods_info["class"] = $post_data['shipmentInfo']['class'];
 	$dangerous_goods_info["packingGroup"] = $post_data['shipmentInfo']['packingGroup'];
 }
-$dangerous_goods_info_html = "
-<h2>Dangerous Goods Info</h2><ul>
-";
+$dangerous_goods_info_html = "<ul>";
 foreach ($dangerous_goods_info as $key => $value){
 	$dangerous_goods_info_html .= "<li>" . ucwords(preg_replace('/(?<=\\w)(?=[A-Z])/'," $1", $key)) . ': ' . $value . "</li>";
 }
@@ -122,6 +118,40 @@ if ($mode_of_transportation != 'Ocean FCL'){
 } else {
 	$type_of_container = $post_data['shipmentInfo']['typeOfContainer'];
 	$pieces_info_html .= "<ul><li>Type of Container: $type_of_container</li></ul>";
+}
+
+/*
+ * Unit Conversion
+ */
+use PhpUnitsOfMeasure\PhysicalQuantity\Length;
+use PhpUnitsOfMeasure\PhysicalQuantity\Mass;
+
+function to_metric ($pieces_info_imperial){
+	$pieces_info_metric = [];
+	foreach ($pieces_info_imperial as $piece){
+		$piece_info = [];
+		foreach ($piece as $key => $value){
+			switch ($key){
+				case "weight":
+					$mass = new Mass($value, "lb");
+					$value_metric = $mass->toUnit("kg");
+					$piece_info[$key] = $value_metric;
+					break;
+				default:
+					$length = new Length($value, "in");
+					$value_metric = $length->toUnit("cm");
+					$piece_info[$key] = $value_metric;
+			}
+		}
+		array_push($pieces_info_metric, $piece_info);
+	}
+	return $pieces_info_metric;
+}
+
+if (isset($unit_system)){
+	if ($unit_system == "Imperial"){
+		$pieces_info = to_metric($pieces_info);
+	}
 }
 
 /*
@@ -206,15 +236,135 @@ function quote_calculation($destination, $mode, $dangerous_goods, $pieces=null){
 
 $quote_info_html = quote_calculation($destination_city, $mode_of_transportation, $dangerous_goods, $pieces_info);
 
-//Consolidate all HTML pieces
-$html =
-	"<h1>Quote $quote_number</h1>" .
-	"<h2>Quote Info: $quote_info_html</h2>" .
-	"<div>$agent_info_html</div>" .
-	"<div>$destination_info_html</div>" .
-	"<div>$dangerous_goods_info_html</div>" .
-	"<div>$pieces_info_html</div>";
 
+function write_html ($quote_number, $agent_info_html, $post_data, $destination_info_html, $dangerous_goods_info_html, $quote_info_html){
+	$html =
+		"<h1>Quote $quote_number</h1>" .
+		"<h2>CLIENT</h2>" .
+		$agent_info_html;
+	$mode_of_transportation = $post_data['shipmentInfo']['modeOfTransportation'];
+	$destination = $post_data['destinationInfo']['city'] . ', ' . $post_data['destinationInfo']['province'];
+	switch ($mode_of_transportation){
+		case "Ocean FCL":
+			$fcl_charges = DB::query("SELECT * FROM fcl_charges");
+			$fcl_charges_html = "<ul>";
+			foreach ($fcl_charges as $charge){
+				$fcl_charges_html .= "<li>". $charge['name'] . ": " . $charge['value'] . "</li>";
+			}
+			$fcl_charges_html .= "</ul>";
+			$type_of_container = $post_data['shipmentInfo']['typeOfContainer'];
+			$html .=
+				"<p>$mode_of_transportation Import</p>".
+				"<p>DAP $destination</p>" .
+				"<p>Equipments: $type_of_container</p>" .
+				"<p>From: CY Toronto, ON</p>" .
+				"<p>Deliver to: DOCK, </p>" .
+				$destination_info_html .
+				"<h2>Dangerous Goods Info: </h2>" .
+				$dangerous_goods_info_html .
+				$fcl_charges_html .
+				"Delivery Cartage: " . $quote_info_html .
+				"<h2>Terms and Conditions</h2>";
+			break;
+		case "Ocean LCL":
+			$unit_system = $post_data['shipmentInfo']['unitSystem'];
+			$pieces_info = $post_data['shipmentInfo']['pieces'];
+			$pieces_info_html = '';
+			foreach ($pieces_info as $index => $piece) {
+				$piece_number = $index + 1;
+				$pieces_info_html .= "<h3>Piece $piece_number</h3>";
+				$pieces_info_html .= "<ul>";
+				foreach ($piece as $key => $value){
+					$pieces_info_html .= "<li>" . ucwords(preg_replace('/(?<=\\w)(?=[A-Z])/'," $1", $key)) . ': ';
+					if ($unit_system == "Metric"){
+						if ($key != "weight"){
+							$pieces_info_html .= $value . " CM</li>";
+						} else {
+							$pieces_info_html .= $value . " KG</li>";
+						}
+					} else if ($unit_system == "Imperial") {
+						if ($key != "weight"){
+							$pieces_info_html .= $value . " IN</li>";
+						} else {
+							$pieces_info_html .= $value . " LB</li>";
+						}
+					}
+				}
+				$pieces_info_html .= "</ul>";
+			}
+			$lcl_charges = DB::query("SELECT * FROM lcl_charges");
+			$lcl_charges_html = "<ul>";
+			foreach ($lcl_charges as $charge){
+				$lcl_charges_html .= "<li>". $charge['name'] . ": " . $charge['value'] . "</li>";
+			}
+			$lcl_charges_html .= "</ul>";
+			$html .=
+				"<p>$mode_of_transportation Import</p>".
+				"<p>DAP $destination</p>" .
+				"<p>From: CFS Toronto, ON</p>" .
+				"<p>Deliver to: DOCK, </p>" .
+				$destination_info_html .
+				"<h2>Cargo Description:</h2>".
+				$pieces_info_html .
+				"<h2>Dangerous Goods Info: </h2>" .
+				$dangerous_goods_info_html .
+				$lcl_charges_html .
+				"Delivery Cartage: " . $quote_info_html .
+				"<h2>Terms and Conditions</h2>";
+			break;
+		case 'Air':
+			$unit_system = $post_data['shipmentInfo']['unitSystem'];
+			$pieces_info = $post_data['shipmentInfo']['pieces'];
+			$pieces_info_html = '';
+			foreach ($pieces_info as $index => $piece) {
+				$piece_number = $index + 1;
+				$pieces_info_html .= "<h3>Piece $piece_number</h3>";
+				$pieces_info_html .= "<ul>";
+				foreach ($piece as $key => $value){
+					$pieces_info_html .= "<li>" . ucwords(preg_replace('/(?<=\\w)(?=[A-Z])/'," $1", $key)) . ': ';
+					if ($unit_system == "Metric"){
+						if ($key != "weight"){
+							$pieces_info_html .= $value . " CM</li>";
+						} else {
+							$pieces_info_html .= $value . " KG</li>";
+						}
+					} else if ($unit_system == "Imperial") {
+						if ($key != "weight"){
+							$pieces_info_html .= $value . " IN</li>";
+						} else {
+							$pieces_info_html .= $value . " LB</li>";
+						}
+					}
+				}
+				$pieces_info_html .= "</ul>";
+			}
+			$air_charges = DB::query("SELECT * FROM air_charges");
+			$air_charges_html = "<ul>";
+			foreach ($air_charges as $charge){
+				$air_charges_html .= "<li>". $charge['name'] . ": " . $charge['value'] . "</li>";
+			}
+			$air_charges_html .= "</ul>";
+			$html .=
+				"<p>$mode_of_transportation Import</p>".
+				"<p>DAP $destination</p>" .
+				"<p>From: CFS Toronto, ON</p>" .
+				"<p>Deliver to: DOCK, </p>" .
+				$destination_info_html .
+				"<h2>Cargo Description:</h2>".
+				$pieces_info_html .
+				"<h2>Dangerous Goods Info: </h2>" .
+				$dangerous_goods_info_html .
+				$air_charges_html .
+				"Delivery Cartage: " . $quote_info_html .
+				"<h2>Terms and Conditions</h2>";
+			break;
+	}
+	return $html;
+}
+
+$html = write_html ($quote_number, $agent_info_html, $post_data, $destination_info_html, $dangerous_goods_info_html, $quote_info_html);
+
+print "A copy of the quote will be sent to your email address";
 //Generate PDF
 $pdf = new TCPDF();
 $pdf->AddPage();
@@ -230,10 +380,11 @@ $mail->Subject = "Quote " . $quote_number;
 $mail->Body = $html;
 $mail->addAttachment($pdf_path);
 
+//try {
+//	$mail->send();
+//	print "A copy of the quote will be sent to your email address";
+//} catch (Exception $e){
+//	print $e->getMessage();
+//}
 
-/*try {
-	$mail->send();
-	print "A copy of the quote was sent to your email address";
-} catch (Exception $e){
-	print $e->getMessage();
-}*/
+print "A copy of the quote will be sent to your email address";

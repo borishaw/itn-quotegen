@@ -9,5 +9,6 @@
     <orderEntry type="library" name="ui-bootstrap" level="application" />
     <orderEntry type="library" name="angular-validation" level="application" />
     <orderEntry type="library" name="angular-validation-rule" level="application" />
+    <orderEntry type="library" name="jquery.tablesorter" level="application" />
   </component>
 </module>

@@ -49,24 +49,19 @@ angular.module('app').controller('ctrl', ['$scope', '$http', '$injector', 'defau
 
     $scope.submit = function () {
 
-        $validationProvider.validate($scope.myForm)
-            .success(function () {
-                $scope.shipment['pieces'] = $scope.pieces;
-                var submission = angular.toJson({
-                    "agentInfo": $scope.agent,
-                    "destinationInfo": $scope.destination,
-                    "shipmentInfo": $scope.shipment
-                });
-                $http({
-                    url: "php/quote_generator.php",
-                    method: "POST",
-                    data: submission
-                }).then(function (response) {
-                    console.log(response.data);
-                    $scope.ajaxMessage = response.data;
-                });
-            }).error(function () {
-            console.log("The form is incomplete");
+        $scope.shipment['pieces'] = $scope.pieces;
+        var submission = angular.toJson({
+            "agentInfo": $scope.agent,
+            "destinationInfo": $scope.destination,
+            "shipmentInfo": $scope.shipment
+        });
+        $scope.ajaxMessage = "Sending...";
+        $http({
+            url: "php/quote_generator.php",
+            method: "POST",
+            data: submission
+        }).then(function (response) {
+            $scope.ajaxMessage = response.data;
         });
     }
 }]);

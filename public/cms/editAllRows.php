@@ -4,7 +4,7 @@ include '.db.inc.php';
 $table_name = $_REQUEST['table_name'];
 $columns = DB::columnList($table_name);
 $rows = DB::query("SELECT * FROM $table_name");
-
+$table_display_name = strtoupper(str_replace("_", " ", $table_name));
 ?>
 
 <!doctype html>

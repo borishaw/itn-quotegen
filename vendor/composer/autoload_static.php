@@ -11,6 +11,10 @@ class ComposerStaticInita58da89471ff1a00cf44575d63b79e39
         array (
             'Respect\\Validation\\' => 19,
         ),
+        'P' => 
+        array (
+            'PhpUnitsOfMeasure\\' => 18,
+        ),
         'L' => 
         array (
             'League\\Csv\\' => 11,
@@ -21,6 +25,10 @@ class ComposerStaticInita58da89471ff1a00cf44575d63b79e39
         'Respect\\Validation\\' => 
         array (
             0 => __DIR__ . '/..' . '/respect/validation/library',
+        ),
+        'PhpUnitsOfMeasure\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-units-of-measure/php-units-of-measure/source',
         ),
         'League\\Csv\\' => 
         array (

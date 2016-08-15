@@ -7,5 +7,6 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Respect\\Validation\\' => array($vendorDir . '/respect/validation/library'),
+    'PhpUnitsOfMeasure\\' => array($vendorDir . '/php-units-of-measure/php-units-of-measure/source'),
     'League\\Csv\\' => array($vendorDir . '/league/csv/src'),
 );

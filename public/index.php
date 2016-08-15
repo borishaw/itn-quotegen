@@ -200,7 +200,6 @@
 		<p>The form is <span ng-if="myForm.$valid">complete</span><span ng-if="!myForm.$valid">incomplete</span></p>
 	</div>
 
-	<div ng-if="ajaxMessage">
-	</div>
+	<div ng-if="ajaxMessage">{{ajaxMessage}}</div>
 
 <?php include 'footer.php';?>

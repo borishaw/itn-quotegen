@@ -8,5 +8,14 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.27.2/js/jquery.tablesorter.js"></script>
 <script src="../js/classie.js"></script>
 <script src="../js/min/main-min.js"></script>
+<script>
+	$(function(){
+		$("#recordData").tablesorter({
+			headers: {'.edit, .delete' : {sorter: false}},
+			sortList : [[0,0]]
+		});
+	});
+</script>
