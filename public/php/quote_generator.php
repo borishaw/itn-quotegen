@@ -132,6 +132,9 @@ function to_metric ($pieces_info_imperial){
 		$piece_info = [];
 		foreach ($piece as $key => $value){
 			switch ($key){
+				case "numberOfSamePiece":
+					$piece_info[$key] = $value;
+					break;
 				case "weight":
 					$mass = new Mass($value, "lb");
 					$value_metric = $mass->toUnit("kg");
@@ -183,11 +186,12 @@ function quote_calculation($destination, $mode, $dangerous_goods, $pieces=null){
 					$width = (int) $piece['width'];
 					$height = (int) $piece['height'];
 					$weight = (int) $piece['weight'];
-					$total_weight += $weight;
+					$number_of_same_piece = (int) $piece['numberOfSamePiece'];
+					$total_weight += $weight * $number_of_same_piece;
 					if ($mode == "Ocean LCL"){
-						$volume_weight += ($length + $width + $height) / 100 * 240;
+						$volume_weight += ($length + $width + $height) * $number_of_same_piece / 100 * 240;
 					} else if ("Air") {
-						$volume_weight += ($length + $width + $height) / 100 * 167;
+						$volume_weight += ($length + $width + $height) * $number_of_same_piece / 100 * 167;
 					}
 
 					if ($length > 243 || $width > 121 || $height > 220 || $weight > 1150){
@@ -260,7 +264,6 @@ function write_html ($quote_number, $agent_info_html, $post_data, $destination_i
 				"<p>From: CY Toronto, ON</p>" .
 				"<p>Deliver to: DOCK, </p>" .
 				$destination_info_html .
-				"<h2>Dangerous Goods Info: </h2>" .
 				$dangerous_goods_info_html .
 				$fcl_charges_html .
 				"Delivery Cartage: " . $quote_info_html .
@@ -306,7 +309,6 @@ function write_html ($quote_number, $agent_info_html, $post_data, $destination_i
 				$destination_info_html .
 				"<h2>Cargo Description:</h2>".
 				$pieces_info_html .
-				"<h2>Dangerous Goods Info: </h2>" .
 				$dangerous_goods_info_html .
 				$lcl_charges_html .
 				"Delivery Cartage: " . $quote_info_html .
@@ -322,18 +324,32 @@ function write_html ($quote_number, $agent_info_html, $post_data, $destination_i
 				$pieces_info_html .= "<ul>";
 				foreach ($piece as $key => $value){
 					$pieces_info_html .= "<li>" . ucwords(preg_replace('/(?<=\\w)(?=[A-Z])/'," $1", $key)) . ': ';
-					if ($unit_system == "Metric"){
-						if ($key != "weight"){
-							$pieces_info_html .= $value . " CM</li>";
-						} else {
-							$pieces_info_html .= $value . " KG</li>";
-						}
-					} else if ($unit_system == "Imperial") {
-						if ($key != "weight"){
-							$pieces_info_html .= $value . " IN</li>";
-						} else {
-							$pieces_info_html .= $value . " LB</li>";
-						}
+					switch ($unit_system){
+						case "Metric":
+							switch ($key){
+								case "weight":
+									$pieces_info_html .= $value . " KG</li>";
+									break;
+								case "numberOfSamePiece":
+									$pieces_info_html .= $value . "</li>";
+									break;
+								default:
+									$pieces_info_html .= $value . " CM</li>";
+							}
+							break;
+
+						case "Imperial":
+							switch ($key){
+								case "weight":
+									$pieces_info_html .= $value . " LB</li>";
+									break;
+								case "numberOfSamePiece":
+									$pieces_info_html .= $value . "</li>";
+									break;
+								default:
+									$pieces_info_html .= $value . " IN</li>";
+							}
+							break;
 					}
 				}
 				$pieces_info_html .= "</ul>";
@@ -352,7 +368,6 @@ function write_html ($quote_number, $agent_info_html, $post_data, $destination_i
 				$destination_info_html .
 				"<h2>Cargo Description:</h2>".
 				$pieces_info_html .
-				"<h2>Dangerous Goods Info: </h2>" .
 				$dangerous_goods_info_html .
 				$air_charges_html .
 				"Delivery Cartage: " . $quote_info_html .

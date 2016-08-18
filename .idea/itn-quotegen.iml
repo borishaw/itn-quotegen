@@ -10,5 +10,7 @@
     <orderEntry type="library" name="angular-validation" level="application" />
     <orderEntry type="library" name="angular-validation-rule" level="application" />
     <orderEntry type="library" name="jquery.tablesorter" level="application" />
+    <orderEntry type="library" name="select" level="application" />
+    <orderEntry type="library" name="angular-sanitize" level="application" />
   </component>
 </module>
