@@ -87,9 +87,9 @@ $kilogram_columns = ['min', 'max'];
 											<?php for ($i = 1; $i < count($columns); $i++): ?>
 												<th><?php echo strtoupper($columns[$i]) ?></th>
 											<?php endfor; ?>
-											<th class="edit">Edit <a href="editAllRows.php?table_name=<?php echo $table_name ?>">(Edit
+											<th class="edit">EDIT <a href="editAllRows.php?table_name=<?php echo $table_name ?>">(Edit
 													All Rows)</a></th>
-											<th class="delete">Delete</th>
+											<th class="delete">DELETE</th>
 										</tr>
 										</thead>
 										<tbody>

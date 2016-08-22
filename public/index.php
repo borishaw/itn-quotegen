@@ -208,7 +208,8 @@
 										piece
 									</button>
 									<uib-accordion>
-										<div uib-accordion-group is-open="true" heading="Piece {{$index+1}}" ng-repeat="piece in pieces" class="goods_details">
+										<div uib-accordion-group is-open="true" ng-repeat="piece in pieces" class="goods_details">
+											<uib-accordion-heading><div>Piece {{$index+1}}</div></uib-accordion-heading>
 											<label for="length_{{$index+1}}">Length</label>
 											<input id="length_{{$index+1}}" name="Length_{{$index+1}}"
 											       ng-model="piece.length" type="number">
