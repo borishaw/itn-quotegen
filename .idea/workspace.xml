@@ -2,10 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f05bf037-24e9-4268-8543-451898e965f9" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pdf/1066.pdf" afterPath="$PROJECT_DIR$/pdf/1066.pdf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pdf/1067.pdf" afterPath="$PROJECT_DIR$/pdf/1067.pdf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pdf/1068.pdf" afterPath="$PROJECT_DIR$/pdf/1068.pdf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pdf/1069.pdf" afterPath="$PROJECT_DIR$/pdf/1069.pdf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pdf/1070.pdf" afterPath="$PROJECT_DIR$/pdf/1070.pdf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/itn-quotegen.iml" afterPath="$PROJECT_DIR$/.idea/itn-quotegen.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cms/editTable.php" afterPath="$PROJECT_DIR$/public/cms/editTable.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/cms/index.php" afterPath="$PROJECT_DIR$/public/cms/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/header.php" afterPath="$PROJECT_DIR$/public/header.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.php" afterPath="$PROJECT_DIR$/public/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/geography.js" afterPath="$PROJECT_DIR$/public/js/geography.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/php/quote_generator.php" afterPath="$PROJECT_DIR$/public/php/quote_generator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/php/template.html" afterPath="$PROJECT_DIR$/public/php/template.html" />
     </list>
     <ignored path="itn-quotegen.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,14 +44,66 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="editTable.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/cms/editTable.php">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="636">
-              <caret line="91" column="69" selection-start-line="91" selection-start-column="69" selection-end-line="91" selection-end-column="69" />
+            <state relative-caret-position="247">
+              <caret line="234" column="67" selection-start-line="234" selection-start-column="67" selection-end-line="234" selection-end-column="67" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="controller.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-27">
+              <caret line="26" column="40" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="geography.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/geography.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="38">
+              <caret line="2" column="32" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="quote_generator.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/php/quote_generator.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="21">
+              <caret line="470" column="0" selection-start-line="470" selection-start-column="0" selection-end-line="470" selection-end-column="0" />
               <folding>
-                <marker date="1471628901000" expanded="true" signature="195:209" ph="SELECT * FRO... ${$table_name}" />
+                <marker date="1472240197000" expanded="true" signature="5287:5345" ph="SELECT sold fcl_price_table" />
+                <marker date="1472240197000" expanded="true" signature="6293:6359" ph="SELECT zone air_lcl_city_zone_table" />
+                <marker date="1472240197000" expanded="true" signature="6560:6615" ph="SELECT rate air_lcl_minimum_rate_table" />
+                <marker date="1472240197000" expanded="true" signature="6667:6699" ph="SELECT * FRO... air_lcl_rate_zone_" />
+                <marker date="1472240197000" expanded="true" signature="7835:11410" ph="..." />
+                <marker date="1472240197000" expanded="true" signature="8601:8768" ph="..." />
+                <marker date="1472240197000" expanded="true" signature="11495:14727" ph="..." />
+                <marker date="1472240197000" expanded="true" signature="14816:18373" ph="..." />
+                <marker date="1472240197000" expanded="true" signature="18482:18635" ph="..." />
+                <marker date="1472240197000" expanded="true" signature="18489:18571" ph="..." />
+                <marker date="1472240197000" expanded="true" signature="18929:18954" ph="SELECT * FRO... fcl_charges" />
+                <marker date="1472240197000" expanded="true" signature="20565:20590" ph="SELECT * FRO... lcl_charges" />
+                <marker date="1472240197000" expanded="true" signature="22432:22457" ph="SELECT * FRO... air_charges" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="countries.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/js/countries.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="551">
+              <caret line="29" column="30" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="30" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -63,7 +125,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/public/quote_generator.php" />
         <option value="$PROJECT_DIR$/public/index_old.html" />
         <option value="$PROJECT_DIR$/public/cms/.db.inc.php" />
         <option value="$PROJECT_DIR$/public/cms/updateRow.php" />
@@ -86,34 +147,35 @@
         <option value="$PROJECT_DIR$/test/app.js" />
         <option value="$PROJECT_DIR$/test/tutorial.html" />
         <option value="$PROJECT_DIR$/test/dep.js" />
-        <option value="$PROJECT_DIR$/public/js/geography.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/scripts/scratch.php" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.php" />
         <option value="$PROJECT_DIR$/sql/itn.sql" />
         <option value="&lt;6a1771d4-e697-4639-9497-66dd31306db2&gt;/demo/itn-quotegen/public/cms/.db.inc.php" />
-        <option value="$PROJECT_DIR$/public/cms/index.php" />
         <option value="$PROJECT_DIR$/public/js/controller.js" />
         <option value="&lt;6a1771d4-e697-4639-9497-66dd31306db2&gt;/demo/itn-quotegen/public/js/controller.js" />
         <option value="$PROJECT_DIR$/public/cms/editAllRows.php" />
         <option value="$PROJECT_DIR$/public/cms/js/editTable.js" />
         <option value="$PROJECT_DIR$/public/cms/cms-header.php" />
-        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.js" />
         <option value="$PROJECT_DIR$/public/cms/cms-footer.php" />
         <option value="$PROJECT_DIR$/test/unit-conversion-test.php" />
         <option value="$PROJECT_DIR$/public/js/app.js" />
         <option value="&lt;1b805cc6-2c07-47b3-99a2-4fc56e305f8e&gt;/public_html/demo/php/sendEmail.php" />
         <option value="&lt;1b805cc6-2c07-47b3-99a2-4fc56e305f8e&gt;/public_html/demo/js/career/career-form.js" />
-        <option value="$PROJECT_DIR$/public/header.php" />
         <option value="&lt;6a1771d4-e697-4639-9497-66dd31306db2&gt;/demo/itn-quotegen/public/php/quote_generator.php" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.html" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_1.html" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_2.html" />
-        <option value="$PROJECT_DIR$/public/index.php" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_3.html" />
-        <option value="$PROJECT_DIR$/public/php/quote_generator.php" />
         <option value="$PROJECT_DIR$/public/php/template.html" />
         <option value="$PROJECT_DIR$/public/cms/editTable.php" />
+        <option value="$PROJECT_DIR$/public/cms/index.php" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.css" />
+        <option value="$PROJECT_DIR$/public/js/geography.js" />
+        <option value="$PROJECT_DIR$/public/header.php" />
+        <option value="$PROJECT_DIR$/public/index.php" />
+        <option value="$PROJECT_DIR$/public/php/quote_generator.php" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.js" />
       </list>
     </option>
   </component>
@@ -131,9 +193,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP 5.5.26" />
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
     <option name="width" value="1280" />
-    <option name="height" value="773" />
+    <option name="height" value="800" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -201,6 +262,66 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="itn-quotegen" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="itn-quotegen" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="itn-quotegen" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="itn-quotegen" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="itn-quotegen" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="itn-quotegen" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="php" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="itn-quotegen" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="itn-quotegen" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -209,7 +330,7 @@
     <property name="options.lastSelected" value="vcs.Git" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../EFG-v22" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="true" />
@@ -222,8 +343,9 @@
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="com.intellij.ide.scratch.LRUPopupBuilder$2/Languages" value="HTML&#10;JavaScript&#10;PHP" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$2/Languages" value="JavaScript&#10;CSS&#10;HTML&#10;PHP" />
     <property name="full.screen.before.presentation.mode" value="true" />
+    <property name="FullScreen" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -361,18 +483,23 @@
       <workItem from="1470934828768" duration="19379000" />
       <workItem from="1471372042398" duration="19240000" />
       <workItem from="1471626806471" duration="974000" />
+      <workItem from="1471973462974" duration="183000" />
+      <workItem from="1471974510311" duration="16000" />
+      <workItem from="1471985557501" duration="470000" />
+      <workItem from="1472046003395" duration="652000" />
+      <workItem from="1472231156216" duration="2257000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="265491000" />
+    <option name="totallyTimeSpent" value="269069000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="773" extended-state="0" />
+    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2092084" sideWeight="0.4943182" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2253635" sideWeight="0.4943182" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -436,15 +563,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/cms/viewQuotes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="515">
-          <caret line="31" column="55" selection-start-line="31" selection-start-column="55" selection-end-line="31" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/php/create_pdf.php" />
-    <entry file="file://$PROJECT_DIR$/public/php/test.php" />
     <entry file="file://$PROJECT_DIR$/public/js/app_old.js" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/extLibs/http_cdnjs.cloudflare.com_ajax_libs_angular-validation_1.4.1_angular-validation-rule.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -525,28 +643,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sql/itn.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15827">
-          <caret line="832" column="66" selection-start-line="832" selection-start-column="66" selection-end-line="832" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/cms/.db.inc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.php" />
-    <entry file="file://$PROJECT_DIR$/public/cms/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="969">
-          <caret line="49" column="37" selection-start-line="49" selection-start-column="37" selection-end-line="49" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/dep.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
@@ -599,18 +696,10 @@
     <entry file="file://$PROJECT_DIR$/public/cms/js/editTable.js" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_1.php" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_2.php" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.js" />
     <entry file="file://$PROJECT_DIR$/public/cms/cms-footer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
           <caret line="16" column="58" selection-start-line="16" selection-start-column="58" selection-end-line="16" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/cms/cms-header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="5" column="46" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="46" />
         </state>
       </provider>
     </entry>
@@ -639,27 +728,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="106">
           <caret line="287" column="40" selection-start-line="287" selection-start-column="40" selection-end-line="287" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="0" column="97" selection-start-line="0" selection-start-column="97" selection-end-line="0" selection-end-column="97" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="59" column="43" selection-start-line="59" selection-start-column="43" selection-end-line="59" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/geography.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="3" column="1367" selection-start-line="3" selection-start-column="1367" selection-end-line="3" selection-end-column="1367" />
         </state>
       </provider>
     </entry>
@@ -692,18 +760,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4446">
-          <caret line="211" column="120" selection-start-line="211" selection-start-column="44" selection-end-line="211" selection-end-column="120" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/php/template.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="361">
           <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -711,50 +771,134 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
           <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/cms/.db.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/cms/cms-header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="121" selection-start-line="6" selection-start-column="121" selection-end-line="6" selection-end-column="121" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sql/itn.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/cms/editTable.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="91" column="69" selection-start-line="91" selection-start-column="69" selection-end-line="91" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/cms/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="4" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/extLibs/http_use.fontawesome.com_a48ff4abf2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/header.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
+        <state relative-caret-position="477">
+          <caret line="34" column="46" selection-start-line="34" selection-start-column="46" selection-end-line="34" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="97" selection-start-line="0" selection-start-column="97" selection-end-line="0" selection-end-column="97" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="234" column="67" selection-start-line="234" selection-start-column="67" selection-end-line="234" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/php/quote_generator.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="331" column="23" selection-start-line="331" selection-start-column="23" selection-end-line="331" selection-end-column="23" />
+        <state relative-caret-position="21">
+          <caret line="470" column="0" selection-start-line="470" selection-start-column="0" selection-end-line="470" selection-end-column="0" />
           <folding>
-            <element signature="n#to_metric#0;n#!!top" expanded="false" />
-            <element signature="e#4772#4880#0#PHP" expanded="false" />
-            <marker date="1471564172000" expanded="true" signature="5242:5300" ph="SELECT sold fcl_price_table" />
-            <marker date="1471564172000" expanded="true" signature="6248:6314" ph="SELECT zone air_lcl_city_zone_table" />
-            <marker date="1471564172000" expanded="true" signature="6515:6570" ph="SELECT rate air_lcl_minimum_rate_table" />
-            <marker date="1471564172000" expanded="true" signature="6622:6654" ph="SELECT * FRO... air_lcl_rate_zone_" />
-            <marker date="1471564172000" expanded="false" signature="7790:11365" ph="..." />
-            <marker date="1471564172000" expanded="true" signature="8556:8723" ph="..." />
-            <marker date="1471564172000" expanded="false" signature="11450:14682" ph="..." />
-            <marker date="1471564172000" expanded="false" signature="14771:18328" ph="..." />
-            <marker date="1471564172000" expanded="true" signature="18437:18533" ph="..." />
-            <marker date="1471564172000" expanded="true" signature="18437:18590" ph="..." />
-            <marker date="1471564172000" expanded="true" signature="18444:18526" ph="..." />
-            <marker date="1471564172000" expanded="true" signature="18884:18909" ph="SELECT * FRO... fcl_charges" />
-            <marker date="1471564172000" expanded="true" signature="20520:20545" ph="SELECT * FRO... lcl_charges" />
-            <marker date="1471564172000" expanded="true" signature="22387:22412" ph="SELECT * FRO... air_charges" />
+            <marker date="1472240197000" expanded="true" signature="5287:5345" ph="SELECT sold fcl_price_table" />
+            <marker date="1472240197000" expanded="true" signature="6293:6359" ph="SELECT zone air_lcl_city_zone_table" />
+            <marker date="1472240197000" expanded="true" signature="6560:6615" ph="SELECT rate air_lcl_minimum_rate_table" />
+            <marker date="1472240197000" expanded="true" signature="6667:6699" ph="SELECT * FRO... air_lcl_rate_zone_" />
+            <marker date="1472240197000" expanded="true" signature="7835:11410" ph="..." />
+            <marker date="1472240197000" expanded="true" signature="8601:8768" ph="..." />
+            <marker date="1472240197000" expanded="true" signature="11495:14727" ph="..." />
+            <marker date="1472240197000" expanded="true" signature="14816:18373" ph="..." />
+            <marker date="1472240197000" expanded="true" signature="18482:18635" ph="..." />
+            <marker date="1472240197000" expanded="true" signature="18489:18571" ph="..." />
+            <marker date="1472240197000" expanded="true" signature="18929:18954" ph="SELECT * FRO... fcl_charges" />
+            <marker date="1472240197000" expanded="true" signature="20565:20590" ph="SELECT * FRO... lcl_charges" />
+            <marker date="1472240197000" expanded="true" signature="22432:22457" ph="SELECT * FRO... air_charges" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/cms/editTable.php">
+    <entry file="file://$PROJECT_DIR$/public/js/geography.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="636">
-          <caret line="91" column="69" selection-start-line="91" selection-start-column="69" selection-end-line="91" selection-end-column="69" />
-          <folding>
-            <marker date="1471628901000" expanded="true" signature="195:209" ph="SELECT * FRO... ${$table_name}" />
-          </folding>
+        <state relative-caret-position="38">
+          <caret line="2" column="32" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-27">
+          <caret line="26" column="40" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/countries.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="29" column="30" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>

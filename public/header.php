@@ -32,6 +32,7 @@ if (!isset($_SERVER['PHP_AUTH_USER'])) {
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-validation/1.4.1/angular-validation.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-validation/1.4.1/angular-validation-rule.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-select/0.19.1/select.min.js"></script>
+	<script src="https://use.fontawesome.com/a48ff4abf2.js"></script>
 	<script src="js/app.js"></script>
 	<script src="js/geography.js"></script>
 	<script src="js/controller.js"></script>

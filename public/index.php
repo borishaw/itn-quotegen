@@ -63,16 +63,7 @@
 											<select id="agent_country" ng-model="agent.country" name="Country"
 											        validator="required"
 											        required-error-message="Please select a country" ng-options="country for country in countries" ng-init="agent.country=countries[0]">
-												<!--<option ng-repeat="country in countries" value="{{country}}">
-													{{country}}
-												</option>-->
 											</select>
-											<!--<ui-select ng-model="agent.country" theme="bootstrap">
-												<ui-select-match placeholder="Select or search a country in the list...">{{$select.selected.name}}</ui-select-match>
-												<ui-select-choices repeat="country in countries | filter: $select.search">
-													<small ng-bind-html="country | highlight: $select.search"></small>
-												</ui-select-choices>
-											</ui-select>-->
 										</div>
 									</li>
 									<li>
@@ -240,6 +231,11 @@
 								</div>
 							</ng-form>
 							<button type="submit" ng-disabled="!myForm.$valid">Submit</button>
+							<div ng-if="ajaxMessage=='Sending...'">
+								<i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
+								<span class="sr-only">Loading...</span>
+							</div>
+
 						</form>
 					</div>
 					<div class="col-md-5 col-md-offset-3">

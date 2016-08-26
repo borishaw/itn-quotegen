@@ -2,6 +2,7 @@
 include '.db.inc.php';
 
 $tables = DB::tableList();
+
 ?>
 
 <!doctype html>

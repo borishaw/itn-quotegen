@@ -12,5 +12,6 @@
     <orderEntry type="library" name="jquery.tablesorter" level="application" />
     <orderEntry type="library" name="select" level="application" />
     <orderEntry type="library" name="angular-sanitize" level="application" />
+    <orderEntry type="library" name="a48ff4abf2" level="application" />
   </component>
 </module>

@@ -1,4 +1,7 @@
 <?php
+//delay response for 5 seconds.
+//sleep(2);
+
 //Basic HTTP Authentication
 if (!isset($_SERVER['PHP_AUTH_USER'])) {
 	header("WWW-Authenticate: Basic realm=\"Private Area\"");
@@ -471,12 +474,13 @@ print "A copy of the quote will be sent to your email address";
 $pdf = new TCPDF();
 $pdf->AddPage();
 $pdf->writeHTML($html);
+$pdf->lastPage();
 $pdf_path = dirname(dirname(dirname(__FILE__))) . '/pdf/' . $quote_number . '.pdf';
 $pdf->Output($pdf_path, 'F');
 
 //Generate a HTML file
-$html_template = fopen("template.html", "w") or die("Unable to open file!");
-fwrite($html_template, $html);
+//$html_template = fopen("template.html", "w") or die("Unable to open file!");
+//fwrite($html_template, $html);
 
 //Send out an email with the PDF
 $mail = new PHPMailer();
@@ -492,5 +496,3 @@ $mail->addAttachment($pdf_path);
 //} catch (Exception $e){
 //	print $e->getMessage();
 //}
-
-print "A copy of the quote will be sent to your email address";
